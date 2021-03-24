@@ -7,16 +7,15 @@ enum Direction {
 
 function writeTextToFile(
     text: string,
-    file: string,
+    filePath: string,
     overwriteExistingContent: boolean
-) {
+): boolean {
     const app = Application.currentApplication();
     app.includeStandardAdditions = true;
+    const path = Path(filePath.toString());
 
     try {
-        const fileString = file.toString();
-
-        const openedFile = app.openForAccess(Path(fileString), {
+        const openedFile = app.openForAccess(path, {
             writePermission: true
         });
 
@@ -30,7 +29,7 @@ function writeTextToFile(
         return true;
     } catch (error) {
         try {
-            app.closeAccess(file);
+            app.closeAccess(path);
         } catch (error) {
             console.log(`Couldn't close file: ${error}`);
         }
@@ -38,12 +37,12 @@ function writeTextToFile(
     }
 }
 
-function readFile(file: string) {
+function readFile(filePath: string): string {
     const app = Application.currentApplication();
     app.includeStandardAdditions = true;
-    const fileString = file.toString();
+    const path = Path(filePath.toString());
 
-    return app.read(Path(fileString));
+    return app.read(path);
 }
 
 class CacheObject {

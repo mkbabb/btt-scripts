@@ -5,12 +5,12 @@ var Direction;
     Direction[Direction["LEFT"] = 0] = "LEFT";
     Direction[Direction["RIGHT"] = 1] = "RIGHT";
 })(Direction || (Direction = {}));
-function writeTextToFile(text, file, overwriteExistingContent) {
+function writeTextToFile(text, filePath, overwriteExistingContent) {
     var app = Application.currentApplication();
     app.includeStandardAdditions = true;
+    var path = Path(filePath.toString());
     try {
-        var fileString = file.toString();
-        var openedFile = app.openForAccess(Path(fileString), {
+        var openedFile = app.openForAccess(path, {
             writePermission: true
         });
         if (overwriteExistingContent) {
@@ -22,7 +22,7 @@ function writeTextToFile(text, file, overwriteExistingContent) {
     }
     catch (error) {
         try {
-            app.closeAccess(file);
+            app.closeAccess(path);
         }
         catch (error) {
             console.log("Couldn't close file: " + error);
@@ -30,11 +30,11 @@ function writeTextToFile(text, file, overwriteExistingContent) {
         return false;
     }
 }
-function readFile(file) {
+function readFile(filePath) {
     var app = Application.currentApplication();
     app.includeStandardAdditions = true;
-    var fileString = file.toString();
-    return app.read(Path(fileString));
+    var path = Path(filePath.toString());
+    return app.read(path);
 }
 var CacheObject = /** @class */ (function () {
     function CacheObject(cacheFilePath) {
@@ -124,7 +124,7 @@ var oneThirdsStates = [
     }
 ];
 
-var cacheFilePath = "/Users/mkbabb/Library/Application Support/cachedApplicationStates/betterTouchTool.json";
+var cacheFilePath = "/tmp/betterTouchTool.json";
 var cacheObject = new CacheObject(cacheFilePath);
 var oneThirds = function (direction) {
     var toggleKey = "oneThirds";
