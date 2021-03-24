@@ -17,7 +17,7 @@ Within `BTT`:
 4.  Finally, copy and paste the code - into the text box below "Run" - from a chosen file in [`out`](out/); [`thirds/one/left.js`](out/thirds/one/left.js) for example.
 5.  Save, and you're done 🎉.
 
-Look only to [`src`](src/) if your interested in developing.
+You can find an example set of my `BTT` presets [here](data/presets.bttpreset).
 
 ## [`thirds`](src/thirds/)
 
