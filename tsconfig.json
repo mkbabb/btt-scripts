@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "outDir": "src",
+        "sourceMap": true,
+        "module": "ES6",
+        "lib": [
+            "ESNext",
+            "DOM",
+        ],
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        ""
+    ],
+    "include": [
+        "src/*"
+    ]
+}

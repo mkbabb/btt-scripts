@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "indent": [
+            2,
+            4
+        ],
+        "quotes": "off",
+        "require-jsdoc": "off",
+        "comma-dangle": "off",
+        "object-curly-spacing": "off",
+        "space-before-function-paren": "off",
+        "operator-linebreak": "off",
+        "max-len": "off",
+        "no-invalid-this": "off"
+    }
+}
