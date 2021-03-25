@@ -2,7 +2,7 @@
 
 A collection of utility scripts, written in TypeScript, for [Better Touch Tool](https://bettertouchtool.com) (hereinafter `BTT`).
 
-Uses `BTT`'s "_execute JXA script functionality_" to execute the compiled TypeScript as `JXA` (JavaScript for Automation; learn more [here](https://github.com/JXA-Cookbook/JXA-Cookbook)).
+Uses `BTT`'s "_Run JavaScript for Automation_" to execute the compiled TypeScript as `JXA` (JavaScript for Automation; learn more [here](https://github.com/JXA-Cookbook/JXA-Cookbook)).
 
 ## Usage
 
