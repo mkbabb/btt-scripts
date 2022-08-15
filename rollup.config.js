@@ -19,7 +19,8 @@ const genBaseConfig = (inputPath) => {
 };
 
 const files = {
-    thirds: ["one/left.ts", "one/right.ts", "two/left.ts", "two/right.ts"]
+    thirds: ["one/left.ts", "one/right.ts", "two/left.ts", "two/right.ts"],
+    halves: ["left.ts", "right.ts"],
 };
 
 export default Object.entries(files).reduce((acc, [module, paths]) => {
