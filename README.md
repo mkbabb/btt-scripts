@@ -9,6 +9,14 @@ Uses `BTT`'s "_Run JavaScript for Automation_" to execute the compiled TypeScrip
 The compiled JavaScript is available within the [`out`](out/) directory.
 See the below sections for what each module does.
 
+Outside of `BTT`:
+
+1. Create a JSON caching file. This is used to persist states used in-between actions. The default location is `/tmp/betterTouchTool.json`, but you **must** manually create it first.
+
+
+        touch /tmp/betterTouchTool.json
+        echo "{}" > /tmp/betterTouchTool.json
+
 Within `BTT`:
 
 1.  Create a trigger:
