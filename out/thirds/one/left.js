@@ -25,7 +25,7 @@ function writeTextToFile(text, filePath, overwriteExistingContent) {
             app.closeAccess(path);
         }
         catch (error) {
-            console.log("Couldn't close file: " + error);
+            console.log("Couldn't close file: ".concat(error));
         }
         return false;
     }
@@ -132,3 +132,5 @@ var oneThirds = function (direction) {
 };
 
 oneThirds(Direction.LEFT);
+//@ts-ignore
+returnToBTT("Done");

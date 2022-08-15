@@ -1,5 +1,3 @@
-'use strict';
-
 var Direction;
 (function (Direction) {
     Direction[Direction["LEFT"] = 0] = "LEFT";
@@ -75,62 +73,5 @@ var advanceState = function (cacheObject, toggleKey, states, direction) {
     cacheObject.write(toggleKey, newState.toString()).save();
     return cacheObject;
 };
-
-var oneThirdsStates = [
-    {
-        BTTTriggerType: -1,
-        BTTTriggerTypeDescription: "Please Select a Trigger ",
-        BTTTriggerClass: "BTTTriggerTypeOtherTriggers",
-        BTTPredefinedActionType: 108,
-        BTTPredefinedActionName: "Resize window to Left Third",
-        BTTEnabled2: 1,
-        BTTAlternateModifierKeys: 0,
-        BTTUUID: "5511861E-8666-4566-B7BE-AAD91F2BD108",
-        BTTEnabled: 1,
-        BTTModifierMode: 0,
-        BTTOrder: 1,
-        BTTDisplayOrder: 0,
-        BTTMergeIntoTouchBarGroups: 0
-    },
-    {
-        BTTTriggerType: -1,
-        BTTTriggerTypeDescription: "Please Select a Trigger ",
-        BTTTriggerClass: "BTTTriggerTypeOtherTriggers",
-        BTTPredefinedActionType: 109,
-        BTTPredefinedActionName: "Resize window to Middle Third",
-        BTTEnabled2: 1,
-        BTTAlternateModifierKeys: 0,
-        BTTUUID: "D93C495B-09D3-43F7-9D11-9DACF51BA2F4",
-        BTTEnabled: 1,
-        BTTModifierMode: 0,
-        BTTOrder: 2,
-        BTTDisplayOrder: 0,
-        BTTMergeIntoTouchBarGroups: 0
-    },
-    {
-        BTTTriggerType: -1,
-        BTTTriggerTypeDescription: "Please Select a Trigger ",
-        BTTTriggerClass: "BTTTriggerTypeOtherTriggers",
-        BTTPredefinedActionType: 110,
-        BTTPredefinedActionName: "Resize window to Right Third",
-        BTTEnabled2: 1,
-        BTTAlternateModifierKeys: 0,
-        BTTUUID: "020D20AA-5560-4ACE-A1DF-E51A48873BC9",
-        BTTEnabled: 1,
-        BTTModifierMode: 0,
-        BTTOrder: 3,
-        BTTDisplayOrder: 0,
-        BTTMergeIntoTouchBarGroups: 0
-    }
-];
-
-var cacheFilePath = "/tmp/betterTouchTool.json";
-var cacheObject = new CacheObject(cacheFilePath);
-var oneThirds = function (direction) {
-    var toggleKey = "oneThirds";
-    advanceState(cacheObject, toggleKey, oneThirdsStates, direction);
-};
-
-oneThirds(Direction.RIGHT);
-//@ts-ignore
-returnToBTT("Done");
+export { CacheObject, advanceState, Direction };
+//# sourceMappingURL=state-utils.js.map
